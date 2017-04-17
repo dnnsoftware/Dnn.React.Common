@@ -1,6 +1,6 @@
 {
   "name": "dnn-single-line-input",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "SingleLine Input",
   "main": "index.js",
   "scripts": {
