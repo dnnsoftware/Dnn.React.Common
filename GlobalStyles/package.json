@@ -1,10 +1,11 @@
 {
     "name": "dnn-global-styles",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "DNN Global Styles",
     "contributors": [
         { "name": "Miguel Gatmaytan" }
     ],
+    "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/dnnsoftware/Dnn.React.Common"
