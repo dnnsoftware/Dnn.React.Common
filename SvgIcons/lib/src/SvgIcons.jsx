@@ -65,8 +65,6 @@ const ArrowForward = require(`!raw!./svg/arrow_forward.svg`);
 const DownloadIcon = require(`!raw!./svg/download.svg`);
 const ImageIcon = require(`!raw!./svg/image.svg`);
 const HourglassIcon = require(`!raw!./svg/hourglass.svg`);
-const NoData = require('!raw!./svg/nodata.svg');
-
 export {
     ActivityIcon, 
     AddIcon,
@@ -112,7 +110,6 @@ export {
     LinkIcon,
     LockClosedIcon,
     MoreMenuIcon,
-    NoData,
     PagesIcon,
     SearchFileSystemIcon,
     SearchIcon,
