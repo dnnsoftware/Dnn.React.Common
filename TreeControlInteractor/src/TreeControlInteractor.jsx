@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
 import TreeControl from "./TreeControl";
-import {IconSelector} from "./icons/IconSelector";
+import { IconSelector } from "./icons/IconSelector";
+import { Scrollbars } from "react-custom-scrollbars";
+
 
 import "./styles.less";
 
@@ -22,6 +24,11 @@ export default class TreeControlInteractor extends Component {
         this.init();
     }
 
+    componentDidUpdate() {
+        const { scrollbars } = this.refs;
+        scrollbars.scrollToRight();
+    }
+
     init() {
 
         const ExportInitialSelection = () => {
@@ -30,8 +37,8 @@ export default class TreeControlInteractor extends Component {
 
         this.props.getInitialPortalTabs(this.PortalTabsParameters, (response) => {
             const tabs = [response.Results];
-            tabs[0].CheckedState=2;
-            this.setState({ tabs: tabs }, ()=> {
+            tabs[0].CheckedState = 2;
+            this.setState({ tabs: tabs }, () => {
                 ExportInitialSelection();
             });
         });
@@ -238,19 +245,27 @@ export default class TreeControlInteractor extends Component {
 
     render() {
         return (
-            <TreeControl
-                icon_type="arrow_bullet"
-                tabs={this.state.tabs}
-                export={this.export}
-                PortalTabsParameters={this.PortalTabsParameters}
-                getDescendantPortalTabs={this.requestDescendantTabs.bind(this)}
-                fullyChecked={this.fullyChecked}
-                individuallyChecked={this.individuallyChecked}
-                unchecked={this.unchecked}
-                updateTree={this.updateTree.bind(this)}
-                reAlignTree={this.reAlignTree.bind(this)}
-                findParent={this.findParent.bind(this)}
-            />
+            <Scrollbars
+                autoHeight
+                autoHeightMin={405}
+                autoHeightMax={405}
+                style={{ width: 340 }}
+                ref="scrollbars">
+
+                <TreeControl
+                    icon_type="arrow_bullet"
+                    tabs={this.state.tabs}
+                    export={this.export}
+                    PortalTabsParameters={this.PortalTabsParameters}
+                    getDescendantPortalTabs={this.requestDescendantTabs.bind(this)}
+                    fullyChecked={this.fullyChecked}
+                    individuallyChecked={this.individuallyChecked}
+                    unchecked={this.unchecked}
+                    updateTree={this.updateTree.bind(this)}
+                    reAlignTree={this.reAlignTree.bind(this)}
+                    findParent={this.findParent.bind(this)}
+                />
+            </Scrollbars>
         );
 
     }
