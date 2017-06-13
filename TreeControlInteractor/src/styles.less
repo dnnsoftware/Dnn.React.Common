@@ -1,9 +1,12 @@
+@import "~dnn-global-styles/index";
+
 .page-picker {
     padding-left: 40px;
     svg {
         margin-top: 2px;
     }
     input[type="checkbox"]:checked + label.treecontrol-label-normal::after {
+        cursor: pointer;
         content: '';
         position: absolute;
         width: 1.2ex;
@@ -19,7 +22,9 @@
         -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
     }
+
     input[type="checkbox"]:checked + label.treecontrol-label-parent::after {
+        cursor: pointer;
         content: '';
         position: absolute;
         width: 1.2ex;
@@ -51,6 +56,7 @@
         cursor: pointer;
     }
     input[type="checkbox"] + label.treecontrol-label-normal::before {
+        cursor:pointer;
         content: "";
         display: inline-block;
         vertical-align: -25%;
@@ -59,43 +65,47 @@
         border: 1px solid rgb(166, 166, 166);
         margin-right: 0.5em;
     }
-        input[type="checkbox"] + label.treecontrol-label-parent-unselected {
+    input[type="checkbox"] + label.treecontrol-label-parent-unselected {
+        cursor:pointer;
         position: relative;
         overflow: hidden;
         cursor: pointer;
     }
     input[type="checkbox"] + label.treecontrol-label-parent-unselected::before {
+        cursor:pointer;
         content: "";
         display: inline-block;
         vertical-align: -25%;
         height: 2ex;
         width: 2ex;
-        border: 2px solid #1E88C3;
+        border: 2px solid  @curiousBlue;
         margin-right: 0.5em;
     }
 
     input[type="checkbox"]:checked + label.treecontrol-label-normal::before {
+        cursor:pointer;
         content: "";
         display: inline-block;
         vertical-align: -25%;
         height: 2ex;
         width: 2ex;
         border: 1px solid rgb(166, 166, 166);
-        background-color: #1E88C3;
+        background-color: @curiousBlue;
         margin-right: 0.5em;
     }
 
     input[type="checkbox"]:checked + label.treecontrol-label-parent::before {
+        cursor:pointer;
         content: "";
         display: inline-block;
         vertical-align: -25%;
         height: 2ex;
         width: 2ex;
-        -webkit-box-shadow:inset 0px 0px 0px 1px #1E88C3;
-        -moz-box-shadow:inset 0px 0px 0px 1px #1E88C3;
-        box-shadow:inset 0px 0px 0px 1px #1E88C3;
+        -webkit-box-shadow:inset 0px 0px 0px 1px @curiousBlue;
+        -moz-box-shadow:inset 0px 0px 0px 1px  @curiousBlue;
+        box-shadow:inset 0px 0px 0px 1px  @curiousBlue;
         border:1px solid white;
-        background-color:#1E88C3;
+        background-color: @curiousBlue;
         margin-right: 0.5em;
     }
     input[type="checkbox"]:checked + span {

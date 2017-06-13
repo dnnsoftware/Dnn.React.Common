@@ -265,14 +265,15 @@ export default class TreeControl extends Component {
     }
 
     render_tabName(tab) {
-        const name = tab.Name.length > 15 ? `${tab.Name.substr(0, 15)}...` : tab.Name;
+        const charLimit = this.props.characterLimit || 15;
+        const name = tab.Name.length > charLimit ? `${tab.Name.substr(0, charLimit)}...` : tab.Name;
         const render = (() => {
             const margin = styles.margin({ top: 0 });
             const padding = styles.padding({ left: 20 });
             const nowrap = { whiteSpace: "nowrap" };
             const bold = { fontWeight: 400 };
             const color = () => {
-                return tab.CheckedState ? { color: "#1E88C3" } : {};
+                return tab.CheckedState ? { color: this.props.selectedColor } : {};
             };
             const clr = color();
 
@@ -314,7 +315,7 @@ export default class TreeControl extends Component {
                         {tab.HasChildren ? bullet : null}
                         {checkbox}
                         {tabName}
-
+                       
                         {tree}
                     </li>);
                 const parent = this.props.findParent(tab);
@@ -340,7 +341,8 @@ export default class TreeControl extends Component {
                     fullyChecked={this.props.fullyChecked}
                     individuallyChecked={this.props.individuallyChecked}
                     unchecked={this.props.unchecked}
-
+                    selectedColor={this.props.selectedColor}
+                    characterLimit={this.props.characterLimit}
                     export={this.props.export}
                     PortalTabsParameters={this.props.PortalTabsParameters}
                     getDescendantPortalTabs={this.props.getDescendantPortalTabs}
@@ -364,6 +366,8 @@ export default class TreeControl extends Component {
 }
 
 TreeControl.propTypes = {
+    selectedColor: PropTypes.string.isRequired,
+    characterLimit: PropTypes.number.isRequired,
     tabs: PropTypes.object.isRequired,
     icon_type: PropTypes.object.isRequired,
     export: PropTypes.func.isRequired,
