@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { PropTypes } from "prop-types";
-import {IconSelector} from "./icons/IconSelector";
-import {global}  from "./global";
+import { IconSelector } from "./icons/IconSelector";
+import { global } from "./global";
 
 const styles = global.styles;
 const floatLeft = styles.float();
@@ -13,11 +13,9 @@ export default class TreeControl extends Component {
 
     constructor(props) {
         super(props);
-
         const icon_type = props.icon_type;
         this.icon = IconSelector(icon_type);
         this.export = props.export;
-
         this.getDescendantPortalTabs = props.getDescendantPortalTabs;
     }
 
@@ -55,7 +53,6 @@ export default class TreeControl extends Component {
         const exit = () => null;
         loop();
         return;
-
     }
 
     _mapToChildTabs(tab, fn) {
@@ -168,7 +165,6 @@ export default class TreeControl extends Component {
         const parent = this.props.findParent(tab);
         this.setParentCheckedState(parent);
         this.props.reAlignTree();
-
     }
 
     selectIndividual(tab) {
@@ -214,7 +210,7 @@ export default class TreeControl extends Component {
                 <div
                     className="arrow-bullet"
                     onClick={() => fn()}>
-                    {this.render_Bullet.call(this,tab)}
+                    {this.render_Bullet.call(this, tab)}
                 </div>);
         })();
         return bullet;
@@ -222,30 +218,71 @@ export default class TreeControl extends Component {
 
     render_ListCheckbox(tab) {
         const checkbox = (() => {
+            const position = { position: "absolute" };
+            const anyChildrenSelected = (tab) => {
+                const ChildTabs = tab.ChildTabs;
+                const left = () => {
+                    const trueCheckedState = [];
+                    const AreChildrenChecked = (t) => {
+                        const condition = t.CheckedState !== this.props.unchecked;
+                        condition ? trueCheckedState.push(true) : trueCheckedState.push(false);
+                    };
+                    this._mapToChildTabs(tab, AreChildrenChecked);
+                    const bool = trueCheckedState.indexOf(true) !== -1 ? true : false;
+                    return bool;
+                };
+                const right = () => null;
+                return ChildTabs.length ? left() : right();
+            };
+
+            const renderCheckBoxClassName = () => {
+                switch (true) {
+                    case !!tab.HasChildren === true && !!tab.CheckedState === true:
+                        return "treecontrol-label-parent";
+
+                    case !!tab.HasChildren === true && !!tab.CheckedState === false && anyChildrenSelected(tab):
+                        return "treecontrol-label-parent-unselected";
+
+                    default:
+                        return "treecontrol-label-normal";
+                }
+            };
+
             return (
-                <div style={merge(floatLeft)}>
+                <div style={merge(floatLeft, position)}>
                     <input
+                        style={{ border: "3px solid black" }}
                         type="checkbox"
                         onChange={() => this.setCheckedState.call(this, tab)}
-                        checked={tab.CheckedState}
-                    />
-                    <label onClick={() => this.setCheckedState.call(this, tab)} ></label>
+                        checked={tab.CheckedState} />
+                    <label
+                        className={renderCheckBoxClassName()}
+                        onClick={() => this.setCheckedState.call(this, tab)} >
+                    </label>
                 </div>);
         })();
         return checkbox;
     }
 
     render_tabName(tab) {
+        const charLimit = this.props.characterLimit || 15;
+        const name = tab.Name.length > charLimit ? `${tab.Name.substr(0, charLimit)}...` : tab.Name;
         const render = (() => {
-            const padding = styles.margin({ top: 10 });
+            const margin = styles.margin({ top: 0 });
+            const padding = styles.padding({ left: 20 });
+            const nowrap = { whiteSpace: "nowrap" };
+            const bold = { fontWeight: 400 };
+            const color = () => {
+                return tab.CheckedState ? { color: this.props.selectedColor } : {};
+            };
+            const clr = color();
+
             return (
-                <span style={merge(padding)}>
-                    {tab.Name}
+                <span style={merge(margin, padding, nowrap, clr, bold)}>
+                    {name}
                 </span>
             );
-
         })();
-
         return render;
     }
 
@@ -264,7 +301,6 @@ export default class TreeControl extends Component {
                             const condition = t.CheckedState !== this.props.unchecked;
                             condition ? trueCheckedState.push(true) : trueCheckedState.push(false);
                         };
-
                         this._mapToChildTabs(tab, AreChildrenChecked);
                         const bool = trueCheckedState.indexOf(true) !== -1 ? true : false;
                         return bool;
@@ -274,16 +310,17 @@ export default class TreeControl extends Component {
                 };
 
                 const li = () => (
-                    <li key={tab.Name}>
+                    <li
+                        key={tab.Name}>
                         {tab.HasChildren ? bullet : null}
                         {checkbox}
                         {tabName}
-                        {(tab.HasChildren && anyChildrenSelected(tab)) || (tab.HasChildren && tab.CheckedState) ? <span>*</span> : <span></span>}
+                       
                         {tree}
                     </li>);
                 const parent = this.props.findParent(tab);
-
                 const show = parent.IsOpen || parseInt(tab.TabId) === -1 ? li() : null;
+
                 return (
                     show
                 );
@@ -304,7 +341,8 @@ export default class TreeControl extends Component {
                     fullyChecked={this.props.fullyChecked}
                     individuallyChecked={this.props.individuallyChecked}
                     unchecked={this.props.unchecked}
-
+                    selectedColor={this.props.selectedColor}
+                    characterLimit={this.props.characterLimit}
                     export={this.props.export}
                     PortalTabsParameters={this.props.PortalTabsParameters}
                     getDescendantPortalTabs={this.props.getDescendantPortalTabs}
@@ -318,6 +356,7 @@ export default class TreeControl extends Component {
     render() {
         const listStyle = styles.listStyle();
         const list_items = this.render_li(this.props.tabs);
+
         return (
             <ul className="page-picker" style={merge(listStyle)} >
                 {list_items}
@@ -327,6 +366,8 @@ export default class TreeControl extends Component {
 }
 
 TreeControl.propTypes = {
+    selectedColor: PropTypes.string.isRequired,
+    characterLimit: PropTypes.number.isRequired,
     tabs: PropTypes.object.isRequired,
     icon_type: PropTypes.object.isRequired,
     export: PropTypes.func.isRequired,
