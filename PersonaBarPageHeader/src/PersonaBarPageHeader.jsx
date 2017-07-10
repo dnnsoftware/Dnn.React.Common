@@ -54,8 +54,7 @@ PersonaBarPageHeader.propTypes = {
     titleCharLimit: PropTypes.number,
     children: PropTypes.node,
     tooltip: PropTypes.string,
-    titleMaxWidth: PropTypes.number,
-    width: PropTypes.number
+    titleMaxWidth: PropTypes.number
 };
 
 PersonaBarPageHeader.defaultProps = {
