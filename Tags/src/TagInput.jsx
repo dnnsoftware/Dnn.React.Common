@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from "react";
 
 const KEY = {
     BACKSPACE: 8,
+    TAB: 9,
     ENTER: 13,
     COMMA: 188
 };
@@ -36,6 +37,12 @@ export default class TagInput extends Component {
         this.node = null;
     }
 
+    addTagAndContinueAdding(tag) {
+        this.props.addTag(tag);
+        const inputField = this.refs.inputField;
+        setTimeout(() => inputField.focus());
+    }
+
     onChange(event) {
         this.props.onAddingNewTagChange(event.target.value);
     }
@@ -63,11 +70,10 @@ export default class TagInput extends Component {
         switch (event.keyCode) {
             case KEY.ENTER:
             case KEY.COMMA:
+            case KEY.TAB:
                 if (this.props.newTagText) {
                     event.preventDefault();
-                    this.props.addTag(this.props.newTagText);
-                    const inputField = this.refs.inputField;
-                    setTimeout(() => inputField.focus());
+                    this.addTagAndContinueAdding(this.props.newTagText);
                 }
                 break;
             case KEY.BACKSPACE:
