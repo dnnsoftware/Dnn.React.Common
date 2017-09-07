@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from "react";
 
 const KEY = {
     BACKSPACE: 8,
-    TAB: 9,
     ENTER: 13,
     COMMA: 188
 };
@@ -37,19 +36,16 @@ export default class TagInput extends Component {
         this.node = null;
     }
 
-    addTag(tag) {
-        if (typeof (this.props.addTag) === "function") {
-            this.props.addTag(tag);    
-        }
-        
-        const inputField = this.refs.inputField;
-        setTimeout(() => { inputField.focus(); }, 0);
+    onChange(event) {
+        this.props.onAddingNewTagChange(event.target.value);
     }
 
-    onChange(event) {
-        if (typeof(this.props.onAddingNewTagChange) === "function") {
-            this.props.onAddingNewTagChange(event.target.value);
+    onBlur() {
+        if (this.props.newTagText) {
+            this.props.addTag(this.props.newTagText);
         }
+        
+        this.close();
     }
 
     close() {
@@ -67,10 +63,11 @@ export default class TagInput extends Component {
         switch (event.keyCode) {
             case KEY.ENTER:
             case KEY.COMMA:
-            case KEY.TAB:
                 if (this.props.newTagText) {
                     event.preventDefault();
-                    this.addTag(this.props.newTagText);
+                    this.props.addTag(this.props.newTagText);
+                    const inputField = this.refs.inputField;
+                    setTimeout(() => inputField.focus());
                 }
                 break;
             case KEY.BACKSPACE:
@@ -101,6 +98,7 @@ export default class TagInput extends Component {
                         value={this.props.newTagText}
                         aria-label="Tag"
                         onChange={this.onChange.bind(this)}
+                        onBlur={this.onBlur.bind(this)}
                         {...opts}
                     />
                 </div>
