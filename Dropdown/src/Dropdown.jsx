@@ -269,7 +269,7 @@ class Dropdown extends Component {
                         fixedHeight={state.fixedHeight}
                         keepCollapsedContent={true}
                         isOpened={state.dropDownOpen}>
-                        {this.needScroll() && 
+                        {this.needScroll() &&
                             <Scrollbars
                                 autoHide={this.props.autoHide}
                                 style={props.scrollAreaStyle}
@@ -282,17 +282,12 @@ class Dropdown extends Component {
                                 </div>
                             </Scrollbars>
                         }
-                        {!this.needScroll() && 
+                        {!this.needScroll() &&
                             <div>
                                 <ul>
                                     {options}
                                 </ul>
                             </div>
-                        }
-                        {!props.fixedHeight &&
-                            <ul>
-                                {options}
-                            </ul>
                         }
                     </Collapse>
                 </div>
