@@ -1,4 +1,6 @@
 const webpack = require("webpack");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 const path = require("path");
 const packageJson = require("./package.json");
 const isProduction = process.env.NODE_ENV === "production";
@@ -11,6 +13,7 @@ module.exports = {
         libraryTarget: "umd",
         library: "TreeControlInteractor"
     },
+    devtool: "inline-source-map",
     module: {
         loaders: [
             { test: /\.(js|jsx)$/, exclude: /node_modules/, loaders: ["react-hot-loader", "babel-loader"] },
@@ -43,7 +46,7 @@ module.exports = {
                 "NODE_ENV": JSON.stringify("production")
             }
         })
-    ] : [
+        ] : [
             new webpack.DefinePlugin({
                 VERSION: JSON.stringify(packageJson.version)
             })
