@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dnnsoftware/Dnn.Evoq.Microservices.UI.Common.git"
+    "url": "git+https://github.com/dnnsoftware/Dnn.React.Common.git"
   },
   "keywords": [
     "localization",
@@ -22,9 +22,9 @@
   "author": "",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/dnnsoftware/Dnn.Evoq.Microservices.UI.Common/issues"
+    "url": "https://github.com/dnnsoftware/Dnn.React.Common/issues"
   },
-  "homepage": "https://github.com/dnnsoftware/Dnn.Evoq.Microservices.UI.Common#readme",
+  "homepage": "https://github.com/dnnsoftware/Dnn.React.Common#readme",
   "devDependencies": {
     "@types/node": "^8.0.33",
     "@types/react": "~15.0.30",
