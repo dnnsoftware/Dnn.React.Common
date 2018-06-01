@@ -1,6 +1,6 @@
 {
   "name": "dnn-day-picker",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "DNN Day Picker",
   "main": "index.js",
   "scripts": {
