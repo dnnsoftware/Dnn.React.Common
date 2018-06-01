@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "react-day-picker": "^2.3.3",
-    "moment": "2.13.0",
+    "moment": "^2.22.2",
     "raw-loader": "0.5.1",
     "dnn-global-styles": "^0.0.5"
   },
