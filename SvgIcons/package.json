@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "set NODE_ENV=production&&webpack -p"
+    "prepublishOnly": "set NODE_ENV=production && webpack -p"
   },
   "license": "MIT",
   "repository": {

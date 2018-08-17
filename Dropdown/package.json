@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "eslint": "eslint ./src/**/*.jsx",
-    "prepublishOnly": "set NODE_ENV=production&&webpack -p"
+    "prepublishOnly": "set NODE_ENV=production && webpack -p"
   },
   "license": "MIT",
   "repository": {
