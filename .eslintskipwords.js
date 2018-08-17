@@ -52,5 +52,8 @@ module.exports = [
     "scrollarea",
     "searchbox",
 	"checkmark",
-	"filesystem",
+    "filesystem",
+    "npm",
+    "console",
+    "cwd",
 ];

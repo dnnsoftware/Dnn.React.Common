@@ -2,3 +2,4 @@ node_modules
 /sinopiautil.js
 lib
 PagePicker/.vscode/settings.json
+outdated.log
