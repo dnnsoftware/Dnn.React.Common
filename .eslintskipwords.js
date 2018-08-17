@@ -56,4 +56,10 @@ module.exports = [
     "npm",
     "console",
     "cwd",
+    "Helvetica Neue",
+    "Helvetica",
+    "Neue",
+    "Arial",
+    "proxima",
+    "proxima_nova"
 ];
