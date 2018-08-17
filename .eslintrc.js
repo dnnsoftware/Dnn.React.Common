@@ -4,6 +4,7 @@ module.exports = {
         "spellcheck"
     ],
     "env": {
+        "node": true,
         "browser": true,
         "commonjs": true
     },
@@ -25,7 +26,7 @@ module.exports = {
         {
             "comments": "true",
             "strings": "true",
-            "identifiers": "true",
+            "identifiers": "false",
             "skipWords": require("./.eslintskipwords"),
             "skipIfMatch": [
                 "http://[^s]*",
