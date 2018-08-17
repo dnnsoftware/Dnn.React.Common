@@ -60,8 +60,8 @@
     "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
-    "dnn-global-styles": "^0.0.5",
-    "dnn-svg-icons": "0.1.22"
+    "dnn-global-styles": "file:../GlobalStyles",
+    "dnn-svg-icons": "file:..//SvgIcons"
   },
   "peerDependencies": {
     "react": "^16.4.2"
