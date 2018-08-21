@@ -61,5 +61,8 @@ module.exports = [
     "Neue",
     "Arial",
     "proxima",
-    "proxima_nova"
+    "proxima_nova",
+    "js",
+    "jsx",
+    "tsx"
 ];
