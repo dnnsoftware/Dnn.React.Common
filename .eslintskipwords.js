@@ -70,5 +70,9 @@ module.exports = [
     "MMMM",
     "YYYY",
     "dddd",
-    "img"
+    "img",
+    "rgba",
+    "contenteditable",
+    "Draggable",
+    "dragstart"
 ];
