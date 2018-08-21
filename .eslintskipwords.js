@@ -64,5 +64,11 @@ module.exports = [
     "proxima_nova",
     "js",
     "jsx",
-    "tsx"
+    "tsx",
+    "src",
+    "hh",
+    "MMMM",
+    "YYYY",
+    "dddd",
+    "img"
 ];
