@@ -1,6 +1,5 @@
 import React, { Component} from "react";
 import PropTypes from "prop-types";
-import ReactDOM from "react-dom";
 import Collapse from "react-collapse";
 import Scrollbars from "react-custom-scrollbars";
 import {ArrowDownIcon} from "dnn-svg-icons";
@@ -98,7 +97,7 @@ class Dropdown extends Component {
             return;
         }
 
-        if (!ReactDOM.findDOMNode(this).contains(event.target)) {
+        if (!this.node.contains(event.target)) {
             this.setState({
                 dropDownOpen: false,
                 closestValue: null,
@@ -218,12 +217,12 @@ class Dropdown extends Component {
 
         const optionRef = this.selectedOptionElement ? this.selectedOptionElement : null;
         if (optionRef) {
-            const domElement = ReactDOM.findDOMNode(optionRef);
+            const domElement = this.selectedOptionElement.ref;// ReactDOM.findDOMNode(optionRef);
             let offset = domElement.offsetTop;
             if (eventKey === "ArrowUp") {
                 offset = domElement.offsetTop - domElement.clientHeight*2;
             }
-            scroll.top(ReactDOM.findDOMNode(this.scrollBar).childNodes[0], offset);
+            scroll.top(this.node.scrollBar.childNodes[0], offset);
         }
     }
 
