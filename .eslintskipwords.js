@@ -74,5 +74,11 @@ module.exports = [
     "rgba",
     "contenteditable",
     "Draggable",
-    "dragstart"
+    "dragstart",
+    "devtool",
+    "filename",
+    "scrollbar",
+    "mousedown",
+    "prepend",
+    "gi"
 ];
