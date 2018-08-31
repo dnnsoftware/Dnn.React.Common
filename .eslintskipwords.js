@@ -83,5 +83,6 @@ module.exports = [
     "gi",
     "noopener",
     "noreferrer",
-    "fs"
+    "fs",
+    "keyup"
 ];

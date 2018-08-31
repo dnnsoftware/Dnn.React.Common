@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "eslint": "eslint ./src/**/*.jsx",
+    "eslint": "eslint ./src/**/*.jsx --fix",
     "prepublishOnly": "set NODE_ENV=production && webpack -p"
   },
   "license": "MIT",
