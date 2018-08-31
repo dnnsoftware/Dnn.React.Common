@@ -84,5 +84,6 @@ module.exports = [
     "noopener",
     "noreferrer",
     "fs",
-    "keyup"
+    "keyup",
+    "textarea"
 ];

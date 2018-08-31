@@ -13,7 +13,7 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.(js|jsx)$/, enforce: "pre", exclude: /node_modules/, loader: "eslint-loader" },
+            { test: /\.(js|jsx)$/, enforce: "pre", exclude: /node_modules/, loader: "eslint-loader", options: { fix: true } },
             { test: /\.(js|jsx)$/, exclude: /node_modules/, loaders: ["babel-loader?presets[]=react"] },
             { test: /\.less$/, loader: "style-loader!css-loader!less-loader" },
             { test: /\.(svg|png)$/, exclude: /node_modules/, loader: "raw-loader" }
