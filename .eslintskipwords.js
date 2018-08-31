@@ -80,5 +80,8 @@ module.exports = [
     "scrollbar",
     "mousedown",
     "prepend",
-    "gi"
+    "gi",
+    "noopener",
+    "noreferrer",
+    "fs"
 ];
