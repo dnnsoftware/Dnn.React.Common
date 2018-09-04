@@ -85,5 +85,7 @@ module.exports = [
     "noreferrer",
     "fs",
     "keyup",
-    "textarea"
+    "textarea",
+    "calc",
+    "socialpanel"
 ];
