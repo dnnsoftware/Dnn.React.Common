@@ -87,5 +87,7 @@ module.exports = [
     "keyup",
     "textarea",
     "calc",
-    "socialpanel"
+    "socialpanel",
+    "nbsp",
+    "prev"
 ];
