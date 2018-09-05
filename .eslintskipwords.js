@@ -89,5 +89,6 @@ module.exports = [
     "calc",
     "socialpanel",
     "nbsp",
-    "prev"
+    "prev",
+    "workspace"
 ];
