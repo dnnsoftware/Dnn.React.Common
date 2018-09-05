@@ -90,5 +90,6 @@ module.exports = [
     "socialpanel",
     "nbsp",
     "prev",
-    "workspace"
+    "workspace",
+    "Ok"
 ];
