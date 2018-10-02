@@ -91,5 +91,6 @@ module.exports = [
     "nbsp",
     "prev",
     "workspace",
-    "Ok"
+    "Ok",
+    "keypress"
 ];
