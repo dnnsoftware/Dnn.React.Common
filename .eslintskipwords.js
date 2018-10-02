@@ -92,5 +92,10 @@ module.exports = [
     "prev",
     "workspace",
     "Ok",
-    "keypress"
+    "keypress",
+    "sortable",
+    "Droppable",
+    "treecontrol",
+    "unselected",
+    "nowrap"
 ];
