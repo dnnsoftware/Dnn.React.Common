@@ -7,5 +7,9 @@
       "type": "git",
       "url": "https://github.com/dnnsoftware/Dnn.React.Common.git"
     },
+    "scripts": {
+      "preinstall": "node install-all",
+      "build": "node build-all"
+    },
     "private": false
   }

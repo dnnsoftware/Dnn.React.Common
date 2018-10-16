@@ -3,3 +3,4 @@ node_modules
 lib
 PagePicker/.vscode/settings.json
 outdated.log
+yarn-error.log

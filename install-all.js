@@ -3,6 +3,7 @@ const fs = require("fs");
 const child_process = require("child_process");
 
 const root = process.cwd(); 
+yarn_install_innerDependencies();
 yarn_install_recursive(root);
 
 // Since this script is intended to be run as a "preinstall" command,
@@ -30,10 +31,6 @@ function yarn_install_recursive(folder)
     //
     if (has_package_json && folder !== root)
     {
-        console.log("===================================================================");
-        console.log(`Performing "yarn install" inside ${folder === root ? "root folder" : "./" + path.relative(root, folder)}`);
-        console.log("===================================================================");
-
         yarn_install(folder);
     }
 
@@ -44,9 +41,27 @@ function yarn_install_recursive(folder)
     }
 }
 
+function console_log_performingInstall(folder)
+{
+    console.log("===================================================================");
+    console.log(`Performing "yarn install" inside ${folder === root ? "root folder" : "./" + path.relative(root, folder)}`);
+    console.log("===================================================================");
+}
+
+// Performs `yarn install`for all the inner dependencies
+function yarn_install_innerDependencies()
+{
+    yarn_install(path.resolve("EslintConfigDnn"));
+    yarn_install(path.resolve("GlobalStyles"));
+    yarn_install(path.resolve("SvgIcons"));
+    yarn_install(path.resolve("Tooltip"));
+    yarn_install(path.resolve("Label"));
+}
+
 // Performs `yarn install`
 function yarn_install(where)
 {
+    console_log_performingInstall(where);
     child_process.execSync("yarn install", { cwd: where, env: process.env, stdio: "inherit" });
 }
 
