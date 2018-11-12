@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/er8qc8a7323ctfb1?svg=true)](https://ci.appveyor.com/project/DnnAutomation/dnn-react-common)
+[![Build status](https://ci.appveyor.com/api/projects/status/er8qc8a7323ctfb1?svg=true)](https://ci.appveyor.com/project/DnnAutomation/dnn-react-common) [![Greenkeeper badge](https://badges.greenkeeper.io/dnnsoftware/Dnn.React.Common.svg)](https://greenkeeper.io/)
 
 >This documentation is based in the info from 
 http://docs.myget.org/docs/reference/myget-npm-support
