@@ -2,55 +2,41 @@
 # yarn lockfile v1
 
 
-"@babel/code-frame@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/@babel/code-frame/-/@babel/code-frame-7.0.0-beta.44.tgz#2a02643368de80916162be70865c97774f3adbd9"
-  dependencies:
-    "@babel/highlight" "7.0.0-beta.44"
-
 "@babel/code-frame@^7.0.0":
   version "7.0.0"
   resolved "https://www.myget.org/F/dnn-software-public/npm/@babel/code-frame/-/@babel/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/generator@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/@babel/generator/-/@babel/generator-7.0.0-beta.44.tgz#c7e67b9b5284afcf69b309b50d7d37f3e5033d42"
+"@babel/generator@^7.1.5":
+  version "7.1.5"
+  resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.1.5.tgz#615f064d13d95f8f9157c7261f68eddf32ec15b3"
   dependencies:
-    "@babel/types" "7.0.0-beta.44"
+    "@babel/types" "^7.1.5"
     jsesc "^2.5.1"
-    lodash "^4.2.0"
+    lodash "^4.17.10"
     source-map "^0.5.0"
     trim-right "^1.0.1"
 
-"@babel/helper-function-name@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/@babel/helper-function-name/-/@babel/helper-function-name-7.0.0-beta.44.tgz#e18552aaae2231100a6e485e03854bc3532d44dd"
+"@babel/helper-function-name@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@babel/helper-function-name/-/helper-function-name-7.1.0.tgz#a0ceb01685f73355d4360c1247f582bfafc8ff53"
   dependencies:
-    "@babel/helper-get-function-arity" "7.0.0-beta.44"
-    "@babel/template" "7.0.0-beta.44"
-    "@babel/types" "7.0.0-beta.44"
+    "@babel/helper-get-function-arity" "^7.0.0"
+    "@babel/template" "^7.1.0"
+    "@babel/types" "^7.0.0"
 
-"@babel/helper-get-function-arity@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/@babel/helper-get-function-arity/-/@babel/helper-get-function-arity-7.0.0-beta.44.tgz#d03ca6dd2b9f7b0b1e6b32c56c72836140db3a15"
+"@babel/helper-get-function-arity@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0.tgz#83572d4320e2a4657263734113c42868b64e49c3"
   dependencies:
-    "@babel/types" "7.0.0-beta.44"
+    "@babel/types" "^7.0.0"
 
-"@babel/helper-split-export-declaration@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/@babel/helper-split-export-declaration/-/@babel/helper-split-export-declaration-7.0.0-beta.44.tgz#c0b351735e0fbcb3822c8ad8db4e583b05ebd9dc"
+"@babel/helper-split-export-declaration@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0.tgz#3aae285c0311c2ab095d997b8c9a94cad547d813"
   dependencies:
-    "@babel/types" "7.0.0-beta.44"
-
-"@babel/highlight@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/@babel/highlight/-/@babel/highlight-7.0.0-beta.44.tgz#18c94ce543916a80553edcdcf681890b200747d5"
-  dependencies:
-    chalk "^2.0.0"
-    esutils "^2.0.2"
-    js-tokens "^3.0.0"
+    "@babel/types" "^7.0.0"
 
 "@babel/highlight@^7.0.0":
   version "7.0.0"
@@ -60,36 +46,38 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@babel/template@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/@babel/template/-/@babel/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
-  dependencies:
-    "@babel/code-frame" "7.0.0-beta.44"
-    "@babel/types" "7.0.0-beta.44"
-    babylon "7.0.0-beta.44"
-    lodash "^4.2.0"
+"@babel/parser@^7.0.0", "@babel/parser@^7.1.2", "@babel/parser@^7.1.5":
+  version "7.1.5"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.1.5.tgz#20b7d5e7e1811ba996f8a868962ea7dd2bfcd2fc"
 
-"@babel/traverse@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/@babel/traverse/-/@babel/traverse-7.0.0-beta.44.tgz#a970a2c45477ad18017e2e465a0606feee0d2966"
+"@babel/template@^7.1.0":
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.1.2.tgz#090484a574fef5a2d2d7726a674eceda5c5b5644"
   dependencies:
-    "@babel/code-frame" "7.0.0-beta.44"
-    "@babel/generator" "7.0.0-beta.44"
-    "@babel/helper-function-name" "7.0.0-beta.44"
-    "@babel/helper-split-export-declaration" "7.0.0-beta.44"
-    "@babel/types" "7.0.0-beta.44"
-    babylon "7.0.0-beta.44"
+    "@babel/code-frame" "^7.0.0"
+    "@babel/parser" "^7.1.2"
+    "@babel/types" "^7.1.2"
+
+"@babel/traverse@^7.0.0":
+  version "7.1.5"
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.1.5.tgz#5aafca2039aa058c104cf2bfeb9fc4a857ccbca9"
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    "@babel/generator" "^7.1.5"
+    "@babel/helper-function-name" "^7.1.0"
+    "@babel/helper-split-export-declaration" "^7.0.0"
+    "@babel/parser" "^7.1.5"
+    "@babel/types" "^7.1.5"
     debug "^3.1.0"
     globals "^11.1.0"
-    invariant "^2.2.0"
-    lodash "^4.2.0"
+    lodash "^4.17.10"
 
-"@babel/types@7.0.0-beta.44":
-  version "7.0.0-beta.44"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/@babel/types/-/@babel/types-7.0.0-beta.44.tgz#6b1b164591f77dec0a0342aca995f2d046b3a757"
+"@babel/types@^7.0.0", "@babel/types@^7.1.2", "@babel/types@^7.1.5":
+  version "7.1.5"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.1.5.tgz#12fe64e91a431234b7017b4227a78cc0eec4e081"
   dependencies:
     esutils "^2.0.2"
-    lodash "^4.2.0"
+    lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
 "@webassemblyjs/ast@1.7.8":
@@ -367,20 +355,16 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://www.myget.org/F/dnn-software-public/npm/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
-babel-eslint@8.2.6:
-  version "8.2.6"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/babel-eslint/-/babel-eslint-8.2.6.tgz#6270d0c73205628067c0f7ae1693a9e797acefd9"
+babel-eslint@10.0.1:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/babel-eslint/-/babel-eslint-10.0.1.tgz#919681dc099614cd7d31d45c8908695092a1faed"
   dependencies:
-    "@babel/code-frame" "7.0.0-beta.44"
-    "@babel/traverse" "7.0.0-beta.44"
-    "@babel/types" "7.0.0-beta.44"
-    babylon "7.0.0-beta.44"
+    "@babel/code-frame" "^7.0.0"
+    "@babel/parser" "^7.0.0"
+    "@babel/traverse" "^7.0.0"
+    "@babel/types" "^7.0.0"
     eslint-scope "3.7.1"
     eslint-visitor-keys "^1.0.0"
-
-babylon@7.0.0-beta.44:
-  version "7.0.0-beta.44"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/babylon/-/babylon-7.0.0-beta.44.tgz#89159e15e6e30c5096e22d738d8c0af8a0e8ca1d"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -996,9 +980,9 @@ eslint-module-utils@^2.2.0:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
 
-eslint-plugin-babel@5.1.0:
-  version "5.1.0"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/eslint-plugin-babel/-/eslint-plugin-babel-5.1.0.tgz#9c76e476162041e50b6ba69aa4eae3bdd6a4e1c3"
+eslint-plugin-babel@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-babel/-/eslint-plugin-babel-5.2.1.tgz#95cccad9a70908ab1d21276e7e33cc9701a18293"
   dependencies:
     eslint-rule-composer "^0.3.0"
 
@@ -1036,9 +1020,9 @@ eslint-plugin-react@7.11.1:
     jsx-ast-utils "^2.0.1"
     prop-types "^15.6.2"
 
-eslint-plugin-spellcheck@^0.0.10:
-  version "0.0.10"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/eslint-plugin-spellcheck/-/eslint-plugin-spellcheck-0.0.10.tgz#d5c9e1e626ad0eaec4f6fc67f49b8c5065fb18b9"
+eslint-plugin-spellcheck@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-spellcheck/-/eslint-plugin-spellcheck-0.0.11.tgz#f3fcff70a0446e1f04eacd5ebaa8cab23e691b4a"
   dependencies:
     globals "^11.3.0"
     hunspell-spellchecker "^1.0.2"
@@ -1533,12 +1517,6 @@ interpret@^1.0.0:
   version "1.1.0"
   resolved "https://www.myget.org/F/dnn-software-public/npm/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
 
-invariant@^2.2.0:
-  version "2.2.4"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
-  dependencies:
-    loose-envify "^1.0.0"
-
 is-accessor-descriptor@^0.1.6:
   version "0.1.6"
   resolved "https://www.myget.org/F/dnn-software-public/npm/is-accessor-descriptor/-/is-accessor-descriptor-0.1.6.tgz#a9e12cb3ae8d876727eeef3843f8a0897b5c98d6"
@@ -1713,10 +1691,6 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://www.myget.org/F/dnn-software-public/npm/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-js-tokens@^3.0.0:
-  version "3.0.2"
-  resolved "https://www.myget.org/F/dnn-software-public/npm/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
-
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://www.myget.org/F/dnn-software-public/npm/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -1829,11 +1803,11 @@ lodash.upperfirst@4.3.1:
   version "4.3.1"
   resolved "https://www.myget.org/F/dnn-software-public/npm/lodash.upperfirst/-/lodash.upperfirst-4.3.1.tgz#1365edf431480481ef0d1c68957a5ed99d49f7ce"
 
-lodash@^4.14.2, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0:
+lodash@^4.14.2, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.11"
   resolved "https://www.myget.org/F/dnn-software-public/npm/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
-loose-envify@^1.0.0, loose-envify@^1.3.1:
+loose-envify@^1.3.1:
   version "1.4.0"
   resolved "https://www.myget.org/F/dnn-software-public/npm/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   dependencies:
