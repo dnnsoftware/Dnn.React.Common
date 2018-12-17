@@ -401,7 +401,7 @@ class PagePicker extends Component {
         // before the handleClick handler is called, but in spite of that, the handleClick is executed. To avoid
         // the "findDOMNode was called on an unmounted component." error we need to check if the component is mounted before execute this code
         if (!this._isMounted || !props.closeOnBlur || !props.IsInDropDown) { return; }
-        if (!this.dnnPagePickerRef.contains(event.target) && (typeof event.target.className === "string" && event.target.className.indexOf("do-not-close") === -1)) {
+        if (!this.dnnPagePickerRef.current.contains(event.target) && (typeof event.target.className === "string" && event.target.className.indexOf("do-not-close") === -1)) {
             this.setState({
                 dropDownOpen: false
             });
@@ -621,7 +621,6 @@ class PagePicker extends Component {
 }
 
 PagePicker.propTypes = {
-    dispatch: PropTypes.func.isRequired,
 
     //React Collapse prop - set to false if you want to re-render the items every time.
     keepCollapsedContent: PropTypes.bool,
@@ -697,12 +696,6 @@ PagePicker.propTypes = {
     serviceFramework: PropTypes.object,
 
     currentTabId: PropTypes.number,
-   
-    //Object to apply style scrollbar track horizontal
-    renderThumbHorizontal: PropTypes.function,
-    
-    //Object to apply style scrollbar track horizontal
-    renderThumbVertical: PropTypes.function,
 
     scrollbarThumbStyleDefault: PropTypes.object
 };
