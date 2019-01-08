@@ -33,7 +33,8 @@ class PagePicker extends Component {
         this.dnnPagePickerRef = React.createRef();
         this.pagePickerContent = React.createRef();
     }
-    componentWillMount() {
+
+    UNSAFE_componentWillMount() {
         this._isMounted = false;
         if (!this.props.IsMultiSelect) {
             this.setDefaultPage(this.props);
@@ -46,7 +47,7 @@ class PagePicker extends Component {
         });
     }
 
-    componentWillReceiveProps(newProps) {
+    UNSAFE_componentWillReceiveProps(newProps) {
         //reload if any query param changed
         const {props} = this;
         if (props.PortalTabsParameters.portalId !== newProps.PortalTabsParameters.portalId ||
@@ -126,6 +127,7 @@ class PagePicker extends Component {
             portalTabs[0].Processed = true;
             portalTabs[0].ParentTabId = undefined;
             portalTabs[0].ChildTabs = portalTabs[0].ChildTabs.map(tab => {
+                tab.TabId = tab.TabId !== null ? parseInt(tab.TabId) : -1;
                 tab.ChildTabs = tab.ChildTabs !== null ? tab.ChildTabs : [];
                 return tab;
             });
