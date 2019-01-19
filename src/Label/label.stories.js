@@ -1,7 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import Label from "./index";
-import { ArrowEndRightIcon } from "../SvgIcons";
 
 storiesOf("Label", module).add("simple label", () => 
     <Label label="Test" />
