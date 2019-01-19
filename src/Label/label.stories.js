@@ -1,6 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import Label from "./index";
+import { ArrowEndRightIcon } from "../SvgIcons";
 
 storiesOf("Label", module).add("simple label", () => 
     <Label label="Test" />
@@ -19,10 +20,12 @@ storiesOf("Label", module).add("with short tooltip", () =>
 storiesOf("Label", module).add("with short tooltip on right", () =>
     <div style={{paddingTop:100,paddingLeft:100}}>
         <Label 
-            label="Some field label:"             
+            label="Some field label:"   
+            labelType="inline"          
             tooltipMessage="This is a required field"
-            tooltipPlace="top"        
-            tooltipStyle={{float:"",display:"inline",position:"relative",top:11}}
+            tooltipPlace="top"     
+            style={{floar:"left"}}   
+            tooltipStyle={{float:"right"}}
         />
     </div>
 );
