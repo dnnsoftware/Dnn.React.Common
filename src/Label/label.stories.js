@@ -23,7 +23,6 @@ storiesOf("Label", module).add("with short tooltip on right", () =>
             labelType="inline"          
             tooltipMessage="This is a required field"
             tooltipPlace="top"     
-            style={{floar:"left"}}   
             tooltipStyle={{float:"right"}}
         />
     </div>
