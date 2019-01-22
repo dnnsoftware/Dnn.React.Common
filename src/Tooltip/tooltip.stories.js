@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import Tooltip from "./index";
 
 storiesOf("Tooltip", module).add("error with only required props", () => (
-  <div style={{marginTop:100, marginLeft:100}}>
+  <div style={{marginTop:100, marginLeft:100, width: 20}}>
     <Tooltip
       type="error"
       messages={["Tooltip message"]}
@@ -13,7 +13,7 @@ storiesOf("Tooltip", module).add("error with only required props", () => (
 ));
 
 storiesOf("Tooltip", module).add("warning list on bottom", () => (
-  <div style={{marginTop:100, marginLeft:100}}>
+  <div style={{marginTop:100, marginLeft:100, width:20}}>
     <Tooltip
       type="warning"
       messages={["This tooltip message is longer", "and is an array", "with 3 strings","it shows as a list of items"]}
@@ -23,7 +23,7 @@ storiesOf("Tooltip", module).add("warning list on bottom", () => (
 ));
 
 storiesOf("Tooltip", module).add("info with long message and maxWidth on bottom", () => (
-  <div style={{marginTop:100, marginLeft:100}}>
+  <div style={{marginTop:100, marginLeft:100, width:20}}>
     <Tooltip
       type="info"
       messages={["This is a longer message but it should be limited to 50px wide"]}
@@ -35,7 +35,7 @@ storiesOf("Tooltip", module).add("info with long message and maxWidth on bottom"
 ));
 
 storiesOf("Tooltip", module).add("global setting and delayhide", () => (
-  <div style={{marginTop:100, marginLeft:100}}>
+  <div style={{marginTop:100, marginLeft:100, width:20}}>
     <Tooltip
       type="global"
       messages={["This tooltip should hide just after 3 seconds of leaving it"]}
@@ -62,15 +62,17 @@ class DynamicRenderedTooltip extends Component {
 
   render(){
     return(
-      <div style={{marginTop:100, marginLeft:100}}>
+      <div style={{marginTop:100, marginLeft:100,}}>
         <p>This tooltip should not be rendered until you click the button</p>
         <button onClick={this.handleToggleRender.bind(this)}>Toggle render of the tootip</button>
-        <Tooltip
-          type="global"
-          messages={["This tooltip renders dynamically"]}
-          rendered={this.state.rendered}
-          tooltipPlace="top"
-        />
+        <div style={{width:20}}>
+          <Tooltip
+            type="global"
+            messages={["This tooltip renders dynamically"]}
+            rendered={this.state.rendered}
+            tooltipPlace="top"
+          />
+        </div>
       </div>
     );
   }

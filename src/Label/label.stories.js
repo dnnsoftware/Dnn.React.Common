@@ -28,6 +28,18 @@ storiesOf("Label", module).add("with short tooltip on right", () =>
     </div>
 );
 
+storiesOf("Label", module).add("with short tooltip on bottom-right", () =>
+    <div style={{paddingTop:100,paddingLeft:100}}>
+        <Label 
+            label="Some field label:"   
+            labelType="inline"          
+            tooltipMessage="This is a required field"
+            tooltipPlace="bottom"     
+            tooltipStyle={{float:"right"}}
+        />
+    </div>
+);
+
 storiesOf("Label", module).add("Reproduces issue", () =>    
     <div style={{paddingTop:100,paddingLeft:100}}>
         <p>This case reproduces the issue identified in <br />

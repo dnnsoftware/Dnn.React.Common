@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import ReactPortalTooltip from "react-portal-tooltip";
+import { Tooltip as AccessibleTooltip } from "react-accessible-tooltip";
 import uniqueId from "lodash/uniqueId";
 import InfoIcon from "./InfoIcon";
 import ErrorIcon from "./ErrorIcon";
@@ -58,38 +59,50 @@ class Tooltip extends Component {
     constructor() {
         super();
         const id = uniqueId("tooltip-");
-        this.state = {
-            id: id, 
-            active: false
-        };
-    }
+    }    
 
-    showTooltip() {
-        this.setState({isTooltipActive: true});
-    }
-
-    hideTooltip() {
-        this.setState({isTooltipActive: false});
-    }
-    
     render() {
-        const {messages, type, rendered, tooltipPlace, style, className, delayHide, customIcon, tooltipClass, onClick, tooltipColor, maxWidth} = this.props;
+        const {messages, rendered, type, className, style} = this.props;
         const containerClass = "dnn-ui-common-tooltip " + type + " " + (className ? className : "");
         const message = getTooltipText(messages);
-        const TooltipIcon = !customIcon ? getIconComponent(type) : CustomIcon;
+        
 
         if (!message || rendered === false) {
             return <noscript />;
         }
-        const tooltipStyle = this.props.tooltipStyle || getStyle(type, tooltipColor);
         return (
             <div className={containerClass} style={style}>
-                <div id={this.state.id} className="icon" onClick={onClick}
-                    onMouseEnter={this.showTooltip.bind(this)}
-                    onMouseLeave={this.hideTooltip.bind(this)}>
-                    <TooltipIcon icon={customIcon ? customIcon : null} />
-                </div>
-                <ReactPortalTooltip
+                <AccessibleTooltip 
+                    label={props => {  
+                        const {customIcon, type, onClick} = this.props;
+                        const TooltipIcon = !customIcon ? getIconComponent(type) : CustomIcon;
+                        return(
+                            <div className="icon" onClick={onClick} {...props.labelAttributes} >
+                                <TooltipIcon icon={customIcon ? customIcon : null} />
+                            </div>
+                        );
+                    }}
+                    overlay={props => {
+                        const {tooltipPlace, maxWidth} = this.props;
+                        
+                        const classNames = [];
+                        classNames.push("tooltip-overlay");
+                        if (props.isHidden){
+                            classNames.push("tooltip-overlay--hidden");
+                        }
+                        classNames.push(tooltipPlace);
+                        return(
+                            <div
+                                {...props.overlayAttributes}
+                                className={classNames.join(" ")}
+                            >
+                                <div className="tooltip-inner" style={{maxWidth: maxWidth}} dangerouslySetInnerHTML={{__html: message}} />
+                            </div>
+                        );
+                    }}
+                />
+
+                {/* <ReactPortalTooltip
                     style={tooltipStyle}
                     active={this.state.isTooltipActive}
                     position={tooltipPlace}
@@ -97,7 +110,7 @@ class Tooltip extends Component {
                     arrow="center"
                     parent={"#" + this.state.id}>
                     <div style={{maxWidth: maxWidth + "px"}} dangerouslySetInnerHTML={{ __html: message }} />
-                </ReactPortalTooltip>
+                </ReactPortalTooltip> */}
             </div>
         );
     }
@@ -112,7 +125,6 @@ Tooltip.propTypes = {
     tooltipStyle: PropTypes.object,
     tooltipColor: PropTypes.string,
     className: PropTypes.string,
-    delayHide: PropTypes.number,
     customIcon: PropTypes.node,
     tooltipClass: PropTypes.string,
     onClick: PropTypes.func,
@@ -122,7 +134,6 @@ Tooltip.propTypes = {
 Tooltip.defaultProps = {
     tooltipPlace: "top",
     type: "info",
-    delayHide: 100,
     maxWidth: 400
 };
 
