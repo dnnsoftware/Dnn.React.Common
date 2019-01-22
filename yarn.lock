@@ -6910,11 +6910,6 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-portal-tooltip@^2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/react-portal-tooltip/-/react-portal-tooltip-2.4.3.tgz#02a61b87b0fb5404eb6326342dbae0f94ccd94f4"
-  integrity sha512-XQ6gRJ3ZT8gUDOgNa03n0gw1d/soO7azqR85yvrb4pB8DLv74UM0HGsYpCIaY8M5ilSafIh1YU8N8v0uoljhxg==
-
 react-scrollbar@^0.5.4:
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/react-scrollbar/-/react-scrollbar-0.5.4.tgz#270576a28d0f7783b2304b284dbd38d82b36b0e0"
