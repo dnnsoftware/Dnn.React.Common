@@ -22,25 +22,25 @@ storiesOf("Tooltip", module).add("warning list on bottom", () => (
   </div>
 ));
 
-storiesOf("Tooltip", module).add("info with long message and maxWidth on bottom", () => (
-  <div style={{marginTop:100, marginLeft:100, width:20}}>
+storiesOf("Tooltip", module).add("info with long message and maxWidth", () => (
+  <div style={{marginTop:250, marginLeft:100, width:20}}>
     <Tooltip
       type="info"
-      messages={["This is a longer message but it should be limited to 50px wide"]}
+      messages={["This is a longer message but it should be limited to 70px wide"]}
       rendered={true}
-      tooltipPlace="bottom"
-      maxWidth={50}
+      tooltipPlace="top"
+      maxWidth={70}
     />
   </div>
 ));
 
-storiesOf("Tooltip", module).add("global setting and delayhide", () => (
+storiesOf("Tooltip", module).add("global setting and positioned on the bottom", () => (
   <div style={{marginTop:100, marginLeft:100, width:20}}>
     <Tooltip
       type="global"
-      messages={["This tooltip should hide just after 3 seconds of leaving it"]}
+      messages={["This tooltip should show on the bottom"]}
       rendered={true}
-      tooltipPlace="top"
+      tooltipPlace="bottom"
       delayHide={3000}
     />
   </div>
@@ -90,7 +90,6 @@ class DynamicRenderedTooltip extends Component {
 //   tooltipStyle: PropTypes.object,
 //   tooltipColor: PropTypes.string,
 //   className: PropTypes.string,
-//   delayHide: PropTypes.number,
 //   customIcon: PropTypes.node,
 //   tooltipClass: PropTypes.string,
 //   onClick: PropTypes.func,
