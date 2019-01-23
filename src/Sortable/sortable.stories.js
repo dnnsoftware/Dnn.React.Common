@@ -17,7 +17,7 @@ storiesOf("Sortable", module).add("in rows", () => (
     <Sortable
         onSort={action("Sorted")}
         items={testProperties}
-        sorOnDrag={true}>
+        sortOnDrag={true}>
             {renderRows()}
         </Sortable>
 
