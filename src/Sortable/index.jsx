@@ -19,7 +19,6 @@ export default class Sortable extends Component {
             },
             isDraggingOver: false
         };
-
         this.dnnSortableRef = React.createRef();
     }
 
@@ -68,8 +67,8 @@ export default class Sortable extends Component {
     }
 
     setFieldSelected(id, selected) {
-        let {items} = this.state;        
-        
+        let {items} = this.state;
+
         // This file uses == intead of === at multiple places, please do not fix until we rewrite this or the sorting will fail
         items.forEach((items) => {
             if (items.id == id) {
@@ -94,7 +93,7 @@ export default class Sortable extends Component {
         });
     }
 
-    onDropMove(event, dropX, dropY) {        
+    onDropMove(event, dropX, dropY) {
         this.setState({ isDraggingOver: true });
         const sortableItems = event.target.getElementsByClassName("sortable-item");
         if (this.props.sortOnDrag) {
