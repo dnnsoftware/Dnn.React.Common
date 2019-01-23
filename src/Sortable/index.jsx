@@ -23,11 +23,13 @@ export default class Sortable extends Component {
         this.dnnSortableRef = React.createRef();
     }
 
-    UNSAFE_componentWillReceiveProps(newProps) {
-        const items = newProps.items.map((item, index) => {
-            return { index, item, id: index };
-        });
-        this.setState({items});
+    componentDidUpdate(prevProps) {
+        if (prevProps.items !== this.props.items){
+            const items = this.props.items.map((item, index) => {
+                return { index, item, id: index };
+            });
+            this.setState({items});
+        }
     }
 
     sortColumns(a, b) {
@@ -66,8 +68,8 @@ export default class Sortable extends Component {
     }
 
     setFieldSelected(id, selected) {
-        let {items} = this.state;
-
+        let {items} = this.state;        
+        
         // This file uses == intead of === at multiple places, please do not fix until we rewrite this or the sorting will fail
         items.forEach((items) => {
             if (items.id == id) {
@@ -92,7 +94,7 @@ export default class Sortable extends Component {
         });
     }
 
-    onDropMove(event, dropX, dropY) {
+    onDropMove(event, dropX, dropY) {        
         this.setState({ isDraggingOver: true });
         const sortableItems = event.target.getElementsByClassName("sortable-item");
         if (this.props.sortOnDrag) {
@@ -125,7 +127,7 @@ export default class Sortable extends Component {
     sortItem(newIndex) {
         const curIndex = this.currentIndex;
         let {items} = this.state;
-        let currentItem = items.find(i => i.index == curIndex);
+        let currentItem = items.find(i => i.index == curIndex);                
         let itemToReplace = items.find(i => i.index == newIndex);
         if (!itemToReplace) {
             return;
